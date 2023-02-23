@@ -7,6 +7,10 @@ public class Homework {
         System.out.println(Arrays.toString(result));
     }
     public static int[] mergeSort(int[] sortArr) {
+        int[] buffer1 = Arrays.copyOf(sortArr, sortArr.length);
+        int[] buffer2 = new int[sortArr.length];
+        int[] result = mergeSortInner(buffer1, buffer2, 0, sortArr.length);
+        return result;
     }
 
     public static int[] mergeSortInner(int[] buffer1, int[] buffer2, int startIndex, int endIndex) {
